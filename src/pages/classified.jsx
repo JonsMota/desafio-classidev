@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { useForm, Controller } from 'react-hook-form'
 
 import Navbar from '@/components/landingPage/navbar/Navbar'
 import Footer from '@/components/landingPage/footer/Footer'
@@ -33,6 +34,9 @@ const Form = styled.form`
 `
 
 export default function Classified() {
+  const { control, handleSubmit } = useForm()
+
+  const onSubmit = (data) => console.log(data)
   const categories = [
     { value: 'a', label: 'Automóveis' },
     { value: 'b', label: 'Informática' },
@@ -44,13 +48,40 @@ export default function Classified() {
     <StyledPage>
       <Navbar />
       <Title>Crie seu anúncio</Title>
-      <Form>
-        <Input placeholder="Nome do produto" />
-        <InputSelect options={categories} placeholder="Selecione a categoria" />
-        <Input placeholder="Preço" />
-        <Input placeholder="Whatsapp" />
-        <TextArea placeholder="Descrição" />
-        <FormButton>Criar anúncio</FormButton>
+      <Form onSubmit={handleSubmit(onSubmit)}>
+        <Controller
+          name="nomeProduto"
+          control={control}
+          defaultValue=""
+          render={({ field }) => <Input type="text" {...field} placeholder="Nome do produto" />}
+        />
+        <Controller
+          name="categoria"
+          control={control}
+          defaultValue=""
+          render={({ field }) => (
+            <InputSelect options={categories} {...field} placeholder="Selecione a categoria" />
+          )}
+        />
+        <Controller
+          name="preco"
+          control={control}
+          defaultValue=""
+          render={({ field }) => <Input type="number" {...field} placeholder="Preço" />}
+        />
+        <Controller
+          name="whatsapp"
+          control={control}
+          defaultValue=""
+          render={({ field }) => <Input type="number" {...field} placeholder="Whatsapp" />}
+        />
+        <Controller
+          name="descricao"
+          control={control}
+          defaultValue=""
+          render={({ field }) => <TextArea type="text" {...field} placeholder="Descrição" />}
+        />
+        <FormButton type="submit">Criar anúncio</FormButton>
       </Form>
       <Footer />
     </StyledPage>

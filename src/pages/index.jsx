@@ -10,7 +10,7 @@ const StyledPage = styled.div`
   height: 100vh;
 `
 
-export default function Classified() {
+export default function Home() {
   return (
     <StyledPage>
       <Navbar />

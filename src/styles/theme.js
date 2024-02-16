@@ -3,7 +3,8 @@ const theme = {
   secondary: 'rgba(31, 31, 31, 1)',
   white: 'rgba(255, 255, 255, 1)',
   definition: '#817e7e',
-  button: 'rgba(242, 128, 0, 1)'
+  button: 'rgba(242, 128, 0, 1)',
+  black: 'rgba(14, 14, 14, 1)'
 }
 
 export default theme

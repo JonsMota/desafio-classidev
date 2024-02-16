@@ -16,6 +16,8 @@ const StyledPage = styled.div`
 export default function Home() {
   const adContext = useContext(AdContext)
   const { ads } = adContext
+
+  console.log('Home component re-rendered')
   console.log(ads)
   return (
     <StyledPage>

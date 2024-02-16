@@ -30,6 +30,7 @@ const StyledDescription = styled.p`
 `
 
 export default function AdCard({ ad }) {
+  console.log(ad)
   return (
     <StyledContainer>
       <StyledTitle>{ad.nomeProduto}</StyledTitle>

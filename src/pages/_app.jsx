@@ -1,10 +1,9 @@
-// App.js
 import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import AdContexts from '@/components/classified/adContext/AdContext'
 import theme from '../styles/theme'
 
-function App({ Component, pageProps }) {
+export default function App({ Component, pageProps }) {
   const [ads, setAds] = useState([])
 
   return (
@@ -15,5 +14,3 @@ function App({ Component, pageProps }) {
     </ThemeProvider>
   )
 }
-
-export default App

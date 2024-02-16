@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { useForm, Controller } from 'react-hook-form'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 
 import Navbar from '@/components/landingPage/navbar/Navbar'
 import Footer from '@/components/landingPage/footer/Footer'
@@ -41,10 +41,13 @@ export default function Classified() {
   const { ads, setAds } = adContext
 
   const onSubmit = (data) => {
+    console.log(data)
     setAds([...ads, data])
-    console.log(ads)
   }
 
+  useEffect(() => {
+    console.log(ads)
+  }, [ads])
   const categories = [
     { value: 'a', label: 'Automóveis' },
     { value: 'b', label: 'Informática' },

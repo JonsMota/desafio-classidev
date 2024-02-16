@@ -6,7 +6,8 @@ const theme = {
   button: 'rgba(242, 128, 0, 1)',
   black: 'rgba(14, 14, 14, 1)',
   input: 'rgba(164, 164, 164, 1)',
-  textInput: 'rgba(0, 0, 0, 1)'
+  textInput: 'rgba(0, 0, 0, 1)',
+  borderColor: '(rgba(204, 204, 204, 1)'
 }
 
 export default theme

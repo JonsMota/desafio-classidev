@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { useForm, Controller } from 'react-hook-form'
+import { useState } from 'react'
 
 import Navbar from '@/components/landingPage/navbar/Navbar'
 import Footer from '@/components/landingPage/footer/Footer'
@@ -35,8 +36,13 @@ const Form = styled.form`
 
 export default function Classified() {
   const { control, handleSubmit } = useForm()
+  const [ads, setAds] = useState([])
 
-  const onSubmit = (data) => console.log(data)
+  const onSubmit = (data) => {
+    setAds([...ads, data])
+    console.log(ads)
+  }
+
   const categories = [
     { value: 'a', label: 'Automóveis' },
     { value: 'b', label: 'Informática' },

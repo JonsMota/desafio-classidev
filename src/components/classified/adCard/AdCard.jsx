@@ -4,7 +4,7 @@ const StyledContainer = styled.div`
   width: 334px;
   height: 313px;
   border-radius: 10px;
-  border: 1px solid ${(props) => props.theme.borderColor};
+  border: 1px solid #ccc;
   padding: 10px;
   margin: 10px;
 `

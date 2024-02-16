@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 import { useForm, Controller } from 'react-hook-form'
-import { useState } from 'react'
+import { useContext } from 'react'
 
 import Navbar from '@/components/landingPage/navbar/Navbar'
 import Footer from '@/components/landingPage/footer/Footer'
 import { Input, InputSelect } from '@/components/classified/input/Input'
 import TextArea from '@/components/classified/input/TextArea'
 import { FormButton } from '@/components/landingPage/button/Button'
+import AdContext from '@/components/classified/adContext/AdContext'
 
 const StyledPage = styled.div`
   background: ${(props) => props.theme.black};
@@ -36,7 +37,8 @@ const Form = styled.form`
 
 export default function Classified() {
   const { control, handleSubmit } = useForm()
-  const [ads, setAds] = useState([])
+  const adContext = useContext(AdContext)
+  const { ads, setAds } = adContext
 
   const onSubmit = (data) => {
     setAds([...ads, data])

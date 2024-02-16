@@ -1,5 +1,8 @@
 const theme = {
-  primary: 'rgba(14, 14, 14, 1)'
+  primary: 'linear-gradient(to bottom, #424242 0%, #000000 100%)',
+  secondary: 'rgba(31, 31, 31, 1)',
+  white: 'rgba(255, 255, 255, 1)',
+  definition: '#817e7e'
 }
 
 export default theme

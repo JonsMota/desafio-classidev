@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import Navbar from '@/components/landingPage/navbar/Navbar'
 import Footer from '@/components/landingPage/footer/Footer'
-import Input from '@/components/classified/input/Input'
+import { Input, InputSelect } from '@/components/classified/input/Input'
 import TextArea from '@/components/classified/input/TextArea'
 import { FormButton } from '@/components/landingPage/button/Button'
 
@@ -33,13 +33,20 @@ const Form = styled.form`
 `
 
 export default function Classified() {
+  const categories = [
+    { value: 'a', label: 'Automóveis' },
+    { value: 'b', label: 'Informática' },
+    { value: 'c', label: 'Roupas & Acessórios' },
+    { value: 'd', label: '== Nenhuma das Opções ==' }
+  ]
+
   return (
     <StyledPage>
       <Navbar />
       <Title>Crie seu anúncio</Title>
       <Form>
         <Input placeholder="Nome do produto" />
-        <Input placeholder="Selecione a categoria" />
+        <InputSelect options={categories} placeholder="Selecione a categoria" />
         <Input placeholder="Preço" />
         <Input placeholder="Whatsapp" />
         <TextArea placeholder="Descrição" />

@@ -12,7 +12,6 @@ const StyledInput = styled.input`
   padding: 8px;
   font-size: 20px;
   margin-top: 15px;
-  outline: none;
 
   &::placeholder {
     color: ${(props) => props.theme.textInput};
@@ -25,4 +24,35 @@ const Input = ({ ...props }) => {
   return <StyledInput {...props} />
 }
 
-export default Input
+const StyledSelect = styled.select`
+  background-color: ${(props) => props.theme.input};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 103%;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-top: 15px;
+  padding-top: 10px;
+  padding-left: 20px;
+  outline: none;
+`
+
+const InputSelect = ({ options = [], ...props }) => {
+  return (
+    <StyledSelect {...props}>
+      <option value="" disabled>
+        {props.placeholder}
+      </option>
+      {options.map((option, index) => (
+        <option key={index} value={option.value}>
+          {option.label}
+        </option>
+      ))}
+    </StyledSelect>
+  )
+}
+
+export { Input, InputSelect }

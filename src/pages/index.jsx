@@ -9,7 +9,6 @@ const StyledPage = styled.div`
   background: ${(props) => props.theme.primary};
   height: 100vh;
 `
-
 export default function Classified() {
   return (
     <StyledPage>

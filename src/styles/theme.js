@@ -4,7 +4,9 @@ const theme = {
   white: 'rgba(255, 255, 255, 1)',
   definition: '#817e7e',
   button: 'rgba(242, 128, 0, 1)',
-  black: 'rgba(14, 14, 14, 1)'
+  black: 'rgba(14, 14, 14, 1)',
+  input: 'rgba(164, 164, 164, 1)',
+  textInput: 'rgba(0, 0, 0, 1)'
 }
 
 export default theme

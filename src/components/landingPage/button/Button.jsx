@@ -16,3 +16,16 @@ export const Button = styled.button`
   font-weight: 700;
   font-size: 20px;
 `
+export const FormButton = styled.button`
+  background-color: ${(props) => props.theme.button};
+  width: 36%;
+  height: 56px;
+  color: ${(props) => props.theme.white};
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  margin-top: 450px;
+  font-weight: 700;
+  font-size: 20px;
+`
